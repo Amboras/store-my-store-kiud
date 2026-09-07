@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: ['*.e2b.app', '*.tunnel.amboras.com', 'admin.amboras.com'],
   distDir: process.env.NEXT_DIST_DIR ?? '.next',
   output: process.env.VERCEL ? undefined : 'standalone',
   poweredByHeader: false,
@@ -28,6 +29,7 @@ const nextConfig = {
     ],
   },
   experimental: {
+    turbopackMemoryEviction: 'auto',
     optimizePackageImports: [
       'lucide-react',
       '@tanstack/react-query',
